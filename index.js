@@ -121,6 +121,7 @@ async function main() {
     for (complaint of complaintsCSV) {
         const place = addressToPlace[complaint.ADDRESS];
         if (place != null) {
+            complaint.google_name = place.name;
             complaint.google_place_id = place.place_id;
             complaint.google_url = place.url;
             complaint.google_formatted_address = place.formatted_address;
